@@ -35,9 +35,17 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Hero Tagline", name: "heroTagline", widget: "string", default: "Writer & Storyteller"}
-          - {label: "Hero Title", name: "heroTitle", widget: "string", default: "Crafting Stories that Resonate."}
+          - label: "Hero Title"
+            name: "heroTitle"
+            widget: "string"
+            default: "Crafting Stories that Resonate."
+            hint: "Use HTML: <span class='italic text-brand-orange'>text</span> for italic orange"
           - {label: "Hero Description", name: "heroDescription", widget: "text"}
-          - {label: "About Section Title", name: "aboutTitle", widget: "string", default: "Writing is Thinking on Paper."}
+          - label: "About Section Title"
+            name: "aboutTitle"
+            widget: "string"
+            default: "Writing is Thinking on Paper."
+            hint: "Use HTML: <span class='italic text-brand-orange'>text</span> for italic orange"
           - {label: "About Paragraph 1", name: "aboutParagraph1", widget: "text"}
           - {label: "About Paragraph 2", name: "aboutParagraph2", widget: "text"}
 
