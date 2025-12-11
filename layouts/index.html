@@ -16,8 +16,8 @@
                 {{ .Params.heroTitle | default "Crafting Stories that Resonate." | safeHTML }}
             </h1>
             <p class="text-xl text-gray-800 font-light max-w-xl leading-relaxed mb-12">
-                {{ .Params.heroDescription | default "I am Dewi Ria Utari. Writing is my way of speaking to the world,
-                without making a sound." }}
+                {{ with .Params.heroDescription }}{{ . }}{{ else }}I am Dewi Ria Utari. Writing is my way of speaking to
+                the world, without making a sound.{{ end }}
             </p>
 
             <a href="#works"
@@ -58,18 +58,19 @@
     <div class="max-w-screen-2xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
         <div class="reveal">
             <h2 class="font-serif text-5xl md:text-7xl mb-8">
-                {{ .Params.aboutTitle | default "Writing is Thinking on Paper." | safeHTML }}
+                {{ with .Params.aboutTitle }}{{ . | safeHTML }}{{ else }}Writing is Thinking on Paper.{{ end }}
             </h2>
         </div>
         <div class="text-lg text-gray-500 font-light leading-relaxed space-y-6 reveal delay-100">
             <p>
-                {{ .Params.aboutParagraph1 | default "In every word I weave, there is a piece of soul that wants to
-                reach out. I believe that writing has the power to heal, inspire, and connect us to one another." }}
+                {{ with .Params.aboutParagraph1 }}{{ . }}{{ else }}In every word I weave, there is a piece of soul that
+                wants to reach out. I believe that writing has the power to heal, inspire, and connect us to one
+                another.{{ end }}
             </p>
             <p>
-                {{ .Params.aboutParagraph2 | default "The color orange is a symbol of energy and creativity that I
-                always carry. It is warm, yet bold. Like the stories I write—trying to warm readers' hearts while daring
-                to speak the truth." }}
+                {{ with .Params.aboutParagraph2 }}{{ . }}{{ else }}The color orange is a symbol of energy and creativity
+                that I always carry. It is warm, yet bold. Like the stories I write - trying to warm readers' hearts
+                while daring to speak the truth.{{ end }}
             </p>
             <div class="pt-8 flex items-center gap-4">
                 <img src="/images/dru1.jpg"
