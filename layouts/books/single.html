@@ -47,10 +47,29 @@
             <div class="space-y-6 text-lg text-gray-600 font-light leading-relaxed">
                 {{ .Content }}
 
-                <a href="/excerpts/{{ .File.ContentBaseName }}/"
-                    class="inline-block mt-8 bg-brand-black text-white px-8 py-4 text-xs font-semibold tracking-widest uppercase hover:bg-brand-orange transition-colors">
-                    Read Excerpt
-                </a>
+                <!-- Excerpts List -->
+                {{ $bookSlug := .File.ContentBaseName }}
+                {{ $excerpts := where (where .Site.RegularPages "Section" "excerpts") ".Params.bookSlug" $bookSlug }}
+                {{ if $excerpts }}
+                <div class="mt-12 pt-8 border-t border-gray-100">
+                    <h3 class="text-sm uppercase tracking-widest text-gray-400 mb-6">Read Excerpts</h3>
+                    <ul class="space-y-3">
+                        {{ range $excerpts.ByWeight }}
+                        <li>
+                            <a href="{{ .Permalink }}"
+                                class="flex items-center gap-3 text-brand-black hover:text-brand-orange transition-colors group">
+                                <svg class="w-4 h-4 text-brand-orange" fill="none" stroke="currentColor"
+                                    viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M9 5l7 7-7 7" />
+                                </svg>
+                                <span class="font-medium">{{ .Title }}</span>
+                            </a>
+                        </li>
+                        {{ end }}
+                    </ul>
+                </div>
+                {{ end }}
             </div>
 
         </div>

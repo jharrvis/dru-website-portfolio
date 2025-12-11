@@ -1,0 +1,55 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="pt-40 pb-20 px-6 bg-white">
+    <div class="max-w-screen-xl mx-auto">
+        <div class="max-w-3xl reveal active">
+            <p class="text-sm text-brand-orange uppercase tracking-widest mb-4">Short Stories</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-medium text-brand-black mb-6">
+                Stories
+            </h1>
+            <p class="text-xl text-gray-500 font-light leading-relaxed">
+                A collection of short stories exploring themes of family, memory, and the human condition.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Stories Grid -->
+<section class="pb-32 px-6 bg-white">
+    <div class="max-w-screen-xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {{ range .Pages.ByWeight }}
+            <article class="group reveal active">
+                <a href="{{ .Permalink }}"
+                    class="block p-8 border border-gray-200 hover:border-brand-orange transition-colors">
+                    <!-- Story Info -->
+                    <div class="space-y-3">
+                        <p class="text-xs text-brand-orange uppercase tracking-widest">{{ .Params.year }}</p>
+                        <h2
+                            class="font-serif text-2xl font-medium text-brand-black group-hover:text-brand-orange transition-colors">
+                            "{{ .Title }}"
+                        </h2>
+                        {{ with .Params.titleEn }}
+                        <p class="text-lg text-gray-500 italic">({{ . }})</p>
+                        {{ end }}
+                        <p class="text-sm text-gray-400">by {{ .Params.author }}</p>
+                        {{ with .Params.sourceNote }}
+                        <p class="text-sm text-gray-500 italic mt-4">{{ . }}</p>
+                        {{ end }}
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Simple Footer -->
+<footer class="bg-white border-t border-gray-100 py-12">
+    <div class="max-w-screen-2xl mx-auto px-6 text-center">
+        <p class="text-xs text-gray-400 uppercase tracking-widest">
+            &copy; {{ now.Year }} Dewi Ria Utari. All Reserved.
+        </p>
+    </div>
+</footer>
+{{ end }}

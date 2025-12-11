@@ -1,9 +1,10 @@
 ---
-title: "Excerpt - Rumah Hujan"
+title: "The House of Rain"
+bookSlug: "rumah-hujan"
 bookTitle: "Rumah Hujan"
 bookTitleEn: "The House of Rain"
 cover: "/images/book-cover_rumah-hujan.jpg"
-bookUrl: "/books/rumah-hujan/"
+weight: 1
 type: "excerpts"
 ---
 

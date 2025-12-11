@@ -26,6 +26,37 @@ collections:
       - {label: "Weight (Sort Order)", name: "weight", widget: "number", value_type: "int", default: 10}
       - {label: "Body (Synopsis)", name: "body", widget: "markdown"}
 
+  - name: "excerpts"
+    label: "Excerpts"
+    folder: "content/excerpts"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string", hint: "Excerpt/Chapter title"}
+      - {label: "Book Slug", name: "bookSlug", widget: "string", hint: "Slug of the parent book (e.g., rumah-hujan)"}
+      - {label: "Book Title", name: "bookTitle", widget: "string"}
+      - {label: "Book Title (English)", name: "bookTitleEn", widget: "string", required: false}
+      - {label: "Cover Image", name: "cover", widget: "image"}
+      - {label: "Weight (Sort Order)", name: "weight", widget: "number", value_type: "int", default: 10}
+      - {label: "Content", name: "body", widget: "markdown"}
+
+  - name: "stories"
+    label: "Short Stories"
+    folder: "content/stories"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title (Indonesian)", name: "title", widget: "string"}
+      - {label: "Title (English)", name: "titleEn", widget: "string", required: false}
+      - {label: "Author", name: "author", widget: "string", default: "Dewi Ria Utari"}
+      - {label: "Source Book", name: "sourceBook", widget: "string", required: false, hint: "If from a published book"}
+      - {label: "Source Book (English)", name: "sourceBookEn", widget: "string", required: false}
+      - {label: "Source Note", name: "sourceNote", widget: "text", required: false, hint: "Additional info like film adaptation"}
+      - {label: "Year", name: "year", widget: "string"}
+      - {label: "Featured", name: "featured", widget: "boolean", default: false}
+      - {label: "Weight (Sort Order)", name: "weight", widget: "number", value_type: "int", default: 10}
+      - {label: "Content", name: "body", widget: "markdown"}
+
   - name: "pages"
     label: "Pages"
     files:

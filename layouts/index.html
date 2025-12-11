@@ -53,6 +53,41 @@
     </div>
 </section>
 
+<!-- Short Stories Section -->
+<section id="stories" class="py-32 bg-brand-gray/30">
+    <div class="max-w-screen-2xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
+            <h2 class="font-serif text-5xl md:text-6xl text-brand-black">Short Stories</h2>
+            <a href="/stories/"
+                class="hidden md:block text-brand-orange border-b border-brand-orange pb-1 hover:text-black hover:border-black transition-all">View
+                All Stories</a>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            {{ range first 2 (where .Site.RegularPages "Section" "stories") }}
+            <article class="group reveal">
+                <a href="{{ .Permalink }}"
+                    class="block p-8 bg-white border border-gray-100 hover:border-brand-orange transition-colors">
+                    <div class="space-y-3">
+                        <p class="text-xs text-brand-orange uppercase tracking-widest">{{ .Params.year }}</p>
+                        <h3
+                            class="font-serif text-2xl font-medium text-brand-black group-hover:text-brand-orange transition-colors">
+                            "{{ .Title }}"
+                        </h3>
+                        {{ with .Params.titleEn }}
+                        <p class="text-lg text-gray-500 italic">({{ . }})</p>
+                        {{ end }}
+                        {{ with .Params.sourceNote }}
+                        <p class="text-sm text-gray-500 italic mt-4">{{ . }}</p>
+                        {{ end }}
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
 <!-- About / Philosophy Section -->
 <section id="about" class="py-32 bg-brand-gray/30">
     <div class="max-w-screen-2xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
