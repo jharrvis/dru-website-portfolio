@@ -1,11 +1,11 @@
 ---
-title: "The House of Rain"
-bookSlug: "rumah-hujan"
-bookTitle: "Rumah Hujan"
-bookTitleEn: "The House of Rain"
-cover: "/images/book-cover_rumah-hujan.jpg"
+title: The House of Rain
+bookSlug: kekasih-marionette
+bookTitle: Rumah Hujan
+bookTitleEn: The House of Rain
+cover: /images/book-cover_rumah-hujan.jpg
 weight: 1
-type: "excerpts"
+type: excerpts
 ---
 
 ## The House of Rain
