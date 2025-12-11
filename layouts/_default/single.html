@@ -1,0 +1,16 @@
+{{ define "main" }}
+<!-- Single Page Template (About, etc) -->
+<section class="pt-32 pb-24">
+    <div class="max-w-screen-xl mx-auto px-6">
+        <div class="max-w-3xl">
+            <h1 class="font-serif text-5xl md:text-7xl leading-tight font-medium mb-12 text-brand-black reveal">
+                {{ .Title }}
+            </h1>
+
+            <div class="prose prose-lg max-w-none text-gray-600 font-light leading-relaxed reveal delay-100">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

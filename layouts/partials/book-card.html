@@ -1,0 +1,35 @@
+{{/* Book Card Partial
+Usage: {{ partial "book-card.html" (dict "book" $book "delay" "delay-100") }}
+*/}}
+{{ $book := .book }}
+{{ $delay := .delay | default "" }}
+
+<div class="group reveal {{ $delay }} max-w-xs mx-auto">
+    <div class="aspect-[2/3] bg-gray-100 mb-6 overflow-hidden img-container relative">
+        <img src="{{ $book.Params.cover | relURL }}" alt="{{ $book.Title }}"
+            class="w-full h-full object-cover shadow-sm">
+        <div
+            class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+            <a href="{{ $book.RelPermalink }}"
+                class="bg-white/90 px-6 py-3 rounded-full text-xs tracking-widest uppercase font-medium hover:bg-brand-orange hover:text-white transition-colors cursor-pointer">View
+                Book</a>
+        </div>
+    </div>
+    <div class="flex justify-between items-start mb-3">
+        <div>
+            <a href="{{ $book.RelPermalink }}"
+                class="block font-serif text-xl mb-0 group-hover:text-brand-orange transition-colors">{{ $book.Title
+                }}</a>
+            {{ with $book.Params.titleEn }}
+            <p class="text-sm text-brand-orange italic mb-1">{{ . }}</p>
+            {{ end }}
+            <p class="text-xs text-gray-400 font-medium tracking-wide uppercase">{{ $book.Params.bookType }} • {{
+                $book.Params.year }}</p>
+        </div>
+        <span class="text-[10px] border border-gray-200 px-2 py-1 rounded-full text-gray-400 tracking-wider">{{
+            $book.Params.category }}</span>
+    </div>
+    <p class="text-sm text-gray-500 font-light leading-relaxed line-clamp-3">
+        {{ $book.Params.description }}
+    </p>
+</div>

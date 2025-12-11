@@ -1,0 +1,48 @@
+{{ define "main" }}
+<!-- Book Excerpt Section -->
+<section class="pt-40 pb-32 px-6 bg-white">
+    <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+
+        <!-- Book Cover (Sticky) -->
+        <div class="lg:col-span-4 reveal active">
+            <div class="sticky top-32">
+                <div class="bg-gray-50 aspect-[2/3] p-6 md:p-8">
+                    <img src="{{ .Params.cover }}" alt="{{ .Params.bookTitle }} Cover"
+                        class="w-full h-full object-contain shadow-xl shadow-gray-200">
+                </div>
+                <div class="mt-6 text-center">
+                    <a href="{{ .Params.bookUrl }}"
+                        class="text-sm text-brand-orange border-b border-brand-orange pb-1 hover:text-black hover:border-black transition-all">
+                        ← Back to Book Details
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Excerpt Content -->
+        <div class="lg:col-span-8 reveal active">
+            <div class="mb-12">
+                <h1 class="font-serif text-4xl md:text-5xl font-medium text-brand-black mb-2">{{ .Params.bookTitle }}
+                </h1>
+                {{ with .Params.bookTitleEn }}
+                <h2 class="font-serif text-2xl md:text-3xl italic text-brand-orange mb-6">{{ . }}</h2>
+                {{ end }}
+                <p class="text-sm text-gray-400 uppercase tracking-widest">Excerpt</p>
+            </div>
+
+            <div class="excerpt-content text-lg text-gray-700 font-light leading-relaxed">
+                {{ .Content }}
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Simple Footer -->
+<footer class="bg-white border-t border-gray-100 py-12">
+    <div class="max-w-screen-2xl mx-auto px-6 text-center reveal">
+        <p class="text-xs text-gray-400 uppercase tracking-widest">
+            &copy; {{ now.Year }} Dewi Ria Utari. All Reserved.
+        </p>
+    </div>
+</footer>
+{{ end }}

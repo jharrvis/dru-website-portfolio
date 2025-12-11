@@ -1,0 +1,88 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-12 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img id="hero-bg-image" src="/images/ilustrasi/img18.jpg" alt="Background Illustration"
+            class="w-full h-full object-none object-right-bottom md:object-right">
+    </div>
+
+    <div class="max-w-screen-2xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Text Content -->
+        <div class="lg:col-span-8 reveal active">
+            <span class="text-brand-orange font-medium tracking-widest uppercase text-xs mb-6 block">Writer &
+                Storyteller</span>
+            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-none font-medium mb-8 text-brand-black">
+                Crafting <br>
+                <span class="italic text-brand-orange">Stories</span> that <br>
+                Resonate.
+            </h1>
+            <p class="text-xl text-gray-800 font-light max-w-xl leading-relaxed mb-12">
+                I am Dewi Ria Utari. Writing is my way of speaking to the world, without making a sound.
+            </p>
+
+            <a href="#works"
+                class="flex items-center space-x-2 text-sm font-medium animate-bounce mt-12 cursor-pointer opacity-50 hover:opacity-100 transition-opacity text-brand-black">
+                <span>SCROLL TO EXPLORE</span>
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Selected Books Section -->
+<section id="works" class="py-32 bg-white">
+    <div class="max-w-screen-2xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
+            <h2 class="font-serif text-5xl md:text-6xl text-brand-black">Selected Books</h2>
+            <a href="/books/"
+                class="hidden md:block text-brand-orange border-b border-brand-orange pb-1 hover:text-black hover:border-black transition-all">View
+                All Books</a>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-x-8 gap-y-16">
+            {{ $delays := slice "" "delay-100" "delay-200" }}
+            {{ range $index, $book := where .Site.RegularPages "Section" "books" }}
+            {{ if lt $index 3 }}
+            {{ partial "book-card.html" (dict "book" $book "delay" (index $delays $index)) }}
+            {{ end }}
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- About / Philosophy Section -->
+<section id="about" class="py-32 bg-brand-gray/30">
+    <div class="max-w-screen-2xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
+        <div class="reveal">
+            <h2 class="font-serif text-5xl md:text-7xl mb-8">
+                Writing is <br>
+                <span class="text-brand-orange italic">Thinking</span> <br>
+                on Paper.
+            </h2>
+        </div>
+        <div class="text-lg text-gray-500 font-light leading-relaxed space-y-6 reveal delay-100">
+            <p>
+                In every word I weave, there is a piece of soul that wants to reach out. I believe that
+                writing has the power to heal, inspire, and connect us to one another.
+            </p>
+            <p>
+                The color orange is a symbol of energy and creativity that I always carry. It is warm, yet bold.
+                Like the stories I write—trying to warm readers' hearts while daring to speak the truth.
+            </p>
+            <div class="pt-8 flex items-center gap-4">
+                <img src="/images/dru1.jpg"
+                    class="w-16 h-16 rounded-full object-cover border-2 border-brand-orange shadow-lg"
+                    alt="{{ .Site.Title }}">
+                <div>
+                    <p class="font-serif text-lg font-medium text-brand-black">{{ .Site.Title }}</p>
+                    <p class="text-sm text-gray-400">Writer & Storyteller</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{ end }}

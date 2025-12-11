@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode | default " id" }}" class="scroll-smooth">
+
+<head>
+    {{- partial "head.html" . -}}
+</head>
+
+<body class="font-sans antialiased">
+    {{- partial "nav.html" . -}}
+
+    <main>
+        {{- block "main" . }}{{- end }}
+    </main>
+
+    {{- if and (not (eq .Type "about")) (not (eq .Section "books")) -}}
+    {{- partial "footer.html" . -}}
+    {{- else if eq .Type "about" -}}
+    <!-- Simple Footer for About page -->
+    <footer class="bg-white border-t border-gray-100 py-12">
+        <div class="max-w-screen-2xl mx-auto px-6 text-center reveal">
+            <p class="text-xs text-gray-400 uppercase tracking-widest">
+                &copy; {{ now.Year }} Dewi Ria Utari. All Reserved.
+            </p>
+        </div>
+    </footer>
+    {{- end -}}
+    {{- partial "scripts.html" . -}}
+</body>
+
+</html>

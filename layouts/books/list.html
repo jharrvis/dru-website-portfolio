@@ -1,0 +1,60 @@
+{{ define "main" }}
+<!-- Hero Section -->
+<section class="pt-40 pb-20 px-6 bg-white">
+    <div class="max-w-screen-xl mx-auto">
+        <div class="max-w-3xl reveal active">
+            <p class="text-sm text-brand-orange uppercase tracking-widest mb-4">Bibliography</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-medium text-brand-black mb-6">
+                Books
+            </h1>
+            <p class="text-xl text-gray-500 font-light leading-relaxed">
+                A collection of published works by Dewi Ria Utari, spanning novels, short stories, and poetry.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- Books Grid -->
+<section class="pb-32 px-6 bg-white">
+    <div class="max-w-screen-xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            {{ range .Pages.ByWeight }}
+            <article class="group reveal active">
+                <a href="{{ .Permalink }}" class="block">
+                    <!-- Book Cover -->
+                    <div class="img-container bg-gray-50 aspect-[2/3] p-6 mb-6">
+                        <img src="{{ .Params.cover }}" alt="{{ .Title }} Cover"
+                            class="w-full h-full object-contain shadow-lg shadow-gray-200">
+                    </div>
+
+                    <!-- Book Info -->
+                    <div class="space-y-2">
+                        <p class="text-xs text-brand-orange uppercase tracking-widest">{{ .Params.category }}</p>
+                        <h2
+                            class="font-serif text-2xl font-medium text-brand-black group-hover:text-brand-orange transition-colors">
+                            {{ .Title }}
+                        </h2>
+                        {{ with .Params.titleEn }}
+                        <p class="text-sm text-gray-500 italic">{{ . }}</p>
+                        {{ end }}
+                        <p class="text-sm text-gray-400">{{ .Params.bookType }} · {{ .Params.year }}</p>
+                        <p class="text-gray-600 font-light text-sm line-clamp-2 mt-2">
+                            {{ .Params.description }}
+                        </p>
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
+<!-- Simple Footer -->
+<footer class="bg-white border-t border-gray-100 py-12">
+    <div class="max-w-screen-2xl mx-auto px-6 text-center">
+        <p class="text-xs text-gray-400 uppercase tracking-widest">
+            &copy; {{ now.Year }} Dewi Ria Utari. All Reserved.
+        </p>
+    </div>
+</footer>
+{{ end }}

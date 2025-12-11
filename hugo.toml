@@ -1,0 +1,38 @@
+baseURL = "https://druwriting.id/"
+languageCode = "id"
+title = "Dewi Ria Utari"
+
+[params]
+  description = "Portfolio of Dewi Ria Utari - Writer & Storyteller"
+  author = "Dewi Ria Utari"
+  email = "hello@druwriting.id"
+  instagram = "https://www.instagram.com/fransiscadru"
+  linkedin = "https://id.linkedin.com/in/dewi-ria-utari-23a688133"
+  
+  # Hero background images for random selection
+  heroImages = [
+    "img104.jpg", "img108.jpg", "img114.jpg", "img120.jpg", "img124.jpg",
+    "img128.jpg", "img132.jpg", "img138.jpg", "img144.jpg", "img148.jpg",
+    "img152.jpg", "img162.jpg", "img168.jpg", "img18.jpg", "img24.jpg",
+    "img252.jpg", "img46.jpg", "img50.jpg", "img62.jpg", "img66.jpg",
+    "img70.jpg", "img74.jpg", "img82.jpg", "img90.jpg", "img94.jpg"
+  ]
+
+[menu]
+  [[menu.main]]
+    name = "About"
+    url = "/about/"
+    weight = 1
+  [[menu.main]]
+    name = "Books"
+    url = "/#works"
+    weight = 2
+  [[menu.main]]
+    name = "Contact"
+    url = "/#contact"
+    weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

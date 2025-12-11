@@ -1,0 +1,34 @@
+{{ define "main" }}
+<section class="min-h-screen flex items-center justify-center px-6 bg-white">
+    <div class="text-center max-w-2xl reveal active">
+        <!-- 404 Number -->
+        <h1 class="font-serif text-[12rem] md:text-[16rem] font-bold leading-none text-gray-100 select-none">
+            404
+        </h1>
+
+        <!-- Message -->
+        <div class="-mt-16 md:-mt-24 relative z-10">
+            <h2 class="font-serif text-4xl md:text-5xl font-medium text-brand-black mb-4">
+                Page Not Found
+            </h2>
+            <p class="text-lg text-gray-500 font-light mb-8 max-w-md mx-auto">
+                The page you are looking for might have been removed, had its name changed, or is temporarily
+                unavailable.
+            </p>
+
+            <!-- Back Home Button -->
+            <a href="/"
+                class="inline-block bg-brand-black text-white px-8 py-4 text-xs font-semibold tracking-widest uppercase hover:bg-brand-orange transition-colors">
+                Back to Home
+            </a>
+        </div>
+
+        <!-- Decorative Element -->
+        <div class="mt-16 flex justify-center space-x-2">
+            <span class="w-2 h-2 bg-brand-orange rounded-full"></span>
+            <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+            <span class="w-2 h-2 bg-gray-300 rounded-full"></span>
+        </div>
+    </div>
+</section>
+{{ end }}
