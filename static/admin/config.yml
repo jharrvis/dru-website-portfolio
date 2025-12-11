@@ -46,5 +46,9 @@ collections:
         file: "content/about.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Hero Title", name: "heroTitle", widget: "string", default: "In the space between the lines find me."}
+          - label: "Hero Title"
+            name: "heroTitle"
+            widget: "string"
+            default: "In the space between the lines find me."
+            hint: "Use HTML for styling: <span class=\"italic text-brand-orange\">text</span> for italic orange text"
           - {label: "Content", name: "body", widget: "markdown", hint: "First paragraph will have a drop cap style automatically."}

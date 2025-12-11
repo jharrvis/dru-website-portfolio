@@ -1,7 +1,7 @@
 ---
 title: About
 type: about
-heroTitle: In the space between the lines find me.
+heroTitle: 'In the space between the lines <span class="italic text-brand-orange">find me.</span>'
 bioParagraph1: Dewi Ria Utari, popularly known as Dru, is an Indonesian author
   of mystical realism fiction. Born in Malang, she currently resides in Jakarta
   with her husband and two children.
