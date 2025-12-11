@@ -17,3 +17,6 @@ Thumbs.db
 
 # Hugo lock file
 .hugo_build.lock
+
+# Local Netlify folder
+.netlify
