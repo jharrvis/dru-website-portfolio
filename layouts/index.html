@@ -10,15 +10,14 @@
     <div class="max-w-screen-2xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         <!-- Text Content -->
         <div class="lg:col-span-8 reveal active">
-            <span class="text-brand-orange font-medium tracking-widest uppercase text-xs mb-6 block">Writer &
-                Storyteller</span>
+            <span class="text-brand-orange font-medium tracking-widest uppercase text-xs mb-6 block">{{
+                .Params.heroTagline | default "Writer & Storyteller" }}</span>
             <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-none font-medium mb-8 text-brand-black">
-                Crafting <br>
-                <span class="italic text-brand-orange">Stories</span> that <br>
-                Resonate.
+                {{ .Params.heroTitle | default "Crafting Stories that Resonate." | safeHTML }}
             </h1>
             <p class="text-xl text-gray-800 font-light max-w-xl leading-relaxed mb-12">
-                I am Dewi Ria Utari. Writing is my way of speaking to the world, without making a sound.
+                {{ .Params.heroDescription | default "I am Dewi Ria Utari. Writing is my way of speaking to the world,
+                without making a sound." }}
             </p>
 
             <a href="#works"
@@ -59,19 +58,18 @@
     <div class="max-w-screen-2xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-24 items-center">
         <div class="reveal">
             <h2 class="font-serif text-5xl md:text-7xl mb-8">
-                Writing is <br>
-                <span class="text-brand-orange italic">Thinking</span> <br>
-                on Paper.
+                {{ .Params.aboutTitle | default "Writing is Thinking on Paper." | safeHTML }}
             </h2>
         </div>
         <div class="text-lg text-gray-500 font-light leading-relaxed space-y-6 reveal delay-100">
             <p>
-                In every word I weave, there is a piece of soul that wants to reach out. I believe that
-                writing has the power to heal, inspire, and connect us to one another.
+                {{ .Params.aboutParagraph1 | default "In every word I weave, there is a piece of soul that wants to
+                reach out. I believe that writing has the power to heal, inspire, and connect us to one another." }}
             </p>
             <p>
-                The color orange is a symbol of energy and creativity that I always carry. It is warm, yet bold.
-                Like the stories I write—trying to warm readers' hearts while daring to speak the truth.
+                {{ .Params.aboutParagraph2 | default "The color orange is a symbol of energy and creativity that I
+                always carry. It is warm, yet bold. Like the stories I write—trying to warm readers' hearts while daring
+                to speak the truth." }}
             </p>
             <div class="pt-8 flex items-center gap-4">
                 <img src="/images/dru1.jpg"

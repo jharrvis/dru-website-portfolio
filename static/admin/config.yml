@@ -14,8 +14,8 @@ collections:
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "English Title", name: "titleEn", widget: "string", required: false}
-      - {label: "Type", name: "type", widget: "select", options: ["Novel", "Short Stories", "Poetry & Stories", "Poetry", "Essay"]}
-      - {label: "Year", name: "year", widget: "number", value_type: "int", min: 1990, max: 2030}
+      - {label: "Book Type", name: "bookType", widget: "select", options: ["Novel", "Short Stories", "Poetry & Stories", "Poetry", "Essay"]}
+      - {label: "Year", name: "year", widget: "string"}
       - {label: "Category", name: "category", widget: "select", options: ["FICTION", "POETRY", "ESSAY", "NON-FICTION"]}
       - {label: "Cover Image", name: "cover", widget: "image"}
       - {label: "Description", name: "description", widget: "text"}
@@ -24,19 +24,30 @@ collections:
       - {label: "Pages", name: "pages", widget: "number", value_type: "int", required: false}
       - {label: "Featured", name: "featured", widget: "boolean", default: false}
       - {label: "Weight (Sort Order)", name: "weight", widget: "number", value_type: "int", default: 10}
-      - {label: "Buy Links", name: "buyLinks", widget: "list", required: false, fields: [
-          {label: "Store Name", name: "name", widget: "string"},
-          {label: "URL", name: "url", widget: "string"}
-        ]}
-      - {label: "Body", name: "body", widget: "markdown"}
+      - {label: "Body (Synopsis)", name: "body", widget: "markdown"}
 
   - name: "pages"
     label: "Pages"
     files:
-      - label: "About"
+      - label: "Homepage"
+        name: "home"
+        file: "content/_index.md"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Hero Tagline", name: "heroTagline", widget: "string", default: "Writer & Storyteller"}
+          - {label: "Hero Title", name: "heroTitle", widget: "string", default: "Crafting Stories that Resonate."}
+          - {label: "Hero Description", name: "heroDescription", widget: "text"}
+          - {label: "About Section Title", name: "aboutTitle", widget: "string", default: "Writing is Thinking on Paper."}
+          - {label: "About Paragraph 1", name: "aboutParagraph1", widget: "text"}
+          - {label: "About Paragraph 2", name: "aboutParagraph2", widget: "text"}
+
+      - label: "About Page"
         name: "about"
         file: "content/about.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
-          - {label: "Description", name: "description", widget: "string", required: false}
-          - {label: "Body", name: "body", widget: "markdown"}
+          - {label: "Hero Title", name: "heroTitle", widget: "string", default: "In the space between the lines find me."}
+          - {label: "Bio Paragraph 1 (with drop cap)", name: "bioParagraph1", widget: "text"}
+          - {label: "Bio Paragraph 2", name: "bioParagraph2", widget: "text"}
+          - {label: "Bio Paragraph 3", name: "bioParagraph3", widget: "text"}
+          - {label: "Additional Content", name: "body", widget: "markdown", required: false}
