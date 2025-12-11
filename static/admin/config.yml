@@ -47,7 +47,4 @@ collections:
         fields:
           - {label: "Title", name: "title", widget: "string"}
           - {label: "Hero Title", name: "heroTitle", widget: "string", default: "In the space between the lines find me."}
-          - {label: "Bio Paragraph 1 (with drop cap)", name: "bioParagraph1", widget: "text"}
-          - {label: "Bio Paragraph 2", name: "bioParagraph2", widget: "text"}
-          - {label: "Bio Paragraph 3", name: "bioParagraph3", widget: "text"}
-          - {label: "Additional Content", name: "body", widget: "markdown", required: false}
+          - {label: "Content", name: "body", widget: "markdown", hint: "First paragraph will have a drop cap style automatically."}
