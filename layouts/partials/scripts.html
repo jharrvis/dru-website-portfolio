@@ -1,31 +1,55 @@
 <script>
-    // Mobile Menu Toggle
+    // Mobile Menu Toggle - Offcanvas Panel
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
-    let isOpen = false;
+    const menuOverlay = document.getElementById('mobile-menu-overlay');
+    const menuIconOpen = document.getElementById('menu-icon-open');
+    const menuIconClose = document.getElementById('menu-icon-close');
+    let isMenuOpen = false;
 
-    menuBtn.addEventListener('click', () => {
-        isOpen = !isOpen;
-        if (isOpen) {
-            mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
-            mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
-            menuBtn.innerHTML = '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>';
-        } else {
-            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-            mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
-            menuBtn.innerHTML = '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
-        }
-    });
+    function openMenu() {
+        isMenuOpen = true;
+        mobileMenu.classList.remove('translate-x-full');
+        mobileMenu.classList.add('translate-x-0');
+        menuOverlay.classList.remove('opacity-0', 'pointer-events-none');
+        menuOverlay.classList.add('opacity-100', 'pointer-events-auto');
+        menuIconOpen.classList.add('hidden');
+        menuIconClose.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMenu() {
+        isMenuOpen = false;
+        mobileMenu.classList.add('translate-x-full');
+        mobileMenu.classList.remove('translate-x-0');
+        menuOverlay.classList.add('opacity-0', 'pointer-events-none');
+        menuOverlay.classList.remove('opacity-100', 'pointer-events-auto');
+        menuIconOpen.classList.remove('hidden');
+        menuIconClose.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    if (menuBtn) {
+        menuBtn.addEventListener('click', () => {
+            if (isMenuOpen) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        });
+    }
+
+    // Close menu when clicking overlay
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeMenu);
+    }
 
     // Close menu when clicking a link
-    mobileMenu.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => {
-            isOpen = false;
-            mobileMenu.classList.add('opacity-0', 'pointer-events-none');
-            mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
-            menuBtn.innerHTML = '<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>';
+    if (mobileMenu) {
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
-    });
+    }
 
     // Intersection Observer for Reveal Effect
     document.addEventListener('DOMContentLoaded', () => {
@@ -45,21 +69,6 @@
 
         const revealElements = document.querySelectorAll('.reveal');
         revealElements.forEach(el => observer.observe(el));
-
-        // Random Hero Image
-        const heroImages = [
-            'img104.jpg', 'img108.jpg', 'img114.jpg', 'img120.jpg', 'img124.jpg',
-            'img128.jpg', 'img132.jpg', 'img138.jpg', 'img144.jpg', 'img148.jpg',
-            'img152.jpg', 'img162.jpg', 'img168.jpg', 'img18.jpg', 'img24.jpg',
-            'img252.jpg', 'img46.jpg', 'img50.jpg', 'img62.jpg', 'img66.jpg',
-            'img70.jpg', 'img74.jpg', 'img82.jpg', 'img90.jpg', 'img94.jpg'
-        ];
-
-        const randomImage = heroImages[Math.floor(Math.random() * heroImages.length)];
-        const heroBg = document.getElementById('hero-bg-image');
-        if (heroBg) {
-            heroBg.src = `/images/ilustrasi/${randomImage}`;
-        }
     });
 
     // Netlify Identity Widget

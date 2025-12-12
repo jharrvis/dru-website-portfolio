@@ -1,21 +1,26 @@
 {{ define "main" }}
+{{ $heroImages := .Site.Params.heroImages }}
+{{ $randomIndex := mod now.UnixNano (len $heroImages) }}
+{{ $randomImage := index $heroImages $randomIndex }}
 <!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col justify-center px-6 pt-24 pb-12 overflow-hidden">
+<section class="relative min-h-screen flex flex-col justify-center px-6 pt-28 md:pt-24 pb-12 overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-        <img id="hero-bg-image" src="/images/ilustrasi/img18.jpg" alt="Background Illustration"
-            class="w-full h-full object-none object-right-bottom md:object-right">
+        <img src="/images/ilustrasi/{{ $randomImage }}" alt="Background Illustration"
+            class="w-full h-full object-cover md:object-none md:object-right-bottom opacity-30 md:opacity-100">
     </div>
 
-    <div class="max-w-screen-2xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+    <div
+        class="max-w-screen-2xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
         <!-- Text Content -->
         <div class="lg:col-span-8 reveal active">
-            <span class="text-brand-orange font-medium tracking-widest uppercase text-xs mb-6 block">{{
+            <span class="text-brand-orange font-medium tracking-widest uppercase text-xs mb-4 md:mb-6 block">{{
                 .Params.heroTagline | default "Writer & Storyteller" }}</span>
-            <h1 class="font-serif text-6xl md:text-8xl lg:text-9xl leading-none font-medium mb-8 text-brand-black">
+            <h1
+                class="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight md:leading-none font-medium mb-6 md:mb-8 text-brand-black">
                 {{ .Params.heroTitle | default "Crafting Stories that Resonate." | safeHTML }}
             </h1>
-            <p class="text-xl text-gray-800 font-light max-w-xl leading-relaxed mb-12">
+            <p class="text-base md:text-xl text-gray-800 font-light max-w-xl leading-relaxed mb-8 md:mb-12">
                 {{ with .Params.heroDescription }}{{ . }}{{ else }}I am Dewi Ria Utari. Writing is my way of speaking to
                 the world, without making a sound.{{ end }}
             </p>

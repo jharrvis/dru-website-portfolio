@@ -1,11 +1,11 @@
 {{ define "main" }}
 <!-- Book Excerpt Section -->
-<section class="pt-40 pb-32 px-6 bg-white">
-    <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16">
+<section class="pt-28 md:pt-40 pb-32 px-6 bg-white">
+    <div class="max-w-screen-xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
 
         <!-- Book Cover (Sticky) -->
         <div class="lg:col-span-4 reveal active">
-            <div class="sticky top-32">
+            <div class="lg:sticky lg:top-32">
                 <div class="bg-gray-50 aspect-[2/3] p-6 md:p-8">
                     <img src="{{ .Params.cover }}" alt="{{ .Params.bookTitle }} Cover"
                         class="w-full h-full object-contain shadow-xl shadow-gray-200">
@@ -21,29 +21,20 @@
 
         <!-- Excerpt Content -->
         <div class="lg:col-span-8 reveal active">
-            <div class="mb-12">
+            <div class="mb-8 md:mb-12">
                 <p class="text-sm text-gray-400 uppercase tracking-widest mb-4">Excerpt from</p>
-                <h1 class="font-serif text-3xl md:text-4xl font-medium text-brand-black mb-2">{{ .Params.bookTitle }}
+                <h1 class="font-serif text-2xl md:text-4xl font-medium text-brand-black mb-2">{{ .Params.bookTitle }}
                 </h1>
                 {{ with .Params.bookTitleEn }}
-                <h2 class="font-serif text-xl md:text-2xl italic text-brand-orange mb-6">{{ . }}</h2>
+                <h2 class="font-serif text-lg md:text-2xl italic text-brand-orange mb-6">{{ . }}</h2>
                 {{ end }}
-                <h3 class="font-serif text-2xl text-gray-600 mt-8">"{{ .Title }}"</h3>
+                <h3 class="font-serif text-xl md:text-2xl text-gray-600 mt-6 md:mt-8">"{{ .Title }}"</h3>
             </div>
 
-            <div class="excerpt-content text-lg text-gray-700 font-light leading-relaxed">
+            <div class="excerpt-content text-base md:text-lg text-gray-700 font-light leading-relaxed">
                 {{ .Content }}
             </div>
         </div>
     </div>
 </section>
-
-<!-- Simple Footer -->
-<footer class="bg-white border-t border-gray-100 py-12">
-    <div class="max-w-screen-2xl mx-auto px-6 text-center reveal">
-        <p class="text-xs text-gray-400 uppercase tracking-widest">
-            &copy; {{ now.Year }} Dewi Ria Utari. All Reserved.
-        </p>
-    </div>
-</footer>
 {{ end }}
