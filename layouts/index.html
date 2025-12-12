@@ -1,6 +1,7 @@
 {{ define "main" }}
 <!-- Hero Section -->
-<section class="relative min-h-screen flex flex-col justify-center px-6 pt-28 md:pt-24 pb-12 overflow-hidden">
+<section
+    class="relative min-h-screen flex flex-col justify-start md:justify-center px-6 pt-24 md:pt-24 pb-8 md:pb-12 overflow-hidden">
     <!-- Background Image (dynamically set by JS) -->
     <div class="absolute inset-0 z-0 flex justify-end">
         <img id="hero-bg-image" src="" alt="Background Illustration"
@@ -8,22 +9,23 @@
     </div>
 
     <div
-        class="max-w-screen-2xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
+        class="max-w-screen-2xl mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-12 items-start md:items-center flex-grow">
         <!-- Text Content -->
-        <div class="lg:col-span-8 reveal active">
+        <div class="lg:col-span-8 reveal active w-full">
             <span class="text-brand-orange font-medium tracking-widest uppercase text-xs mb-4 md:mb-6 block">{{
                 .Params.heroTagline | default "Writer & Storyteller" }}</span>
             <h1
-                class="font-serif text-4xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight md:leading-none font-medium mb-6 md:mb-8 text-brand-black">
+                class="font-serif text-[5rem] sm:text-5xl md:text-7xl lg:text-8xl leading-tight md:leading-none font-medium mb-4 md:mb-8 text-brand-black w-full">
                 {{ .Params.heroTitle | default "Crafting Stories that Resonate." | safeHTML }}
             </h1>
-            <p class="text-base md:text-xl text-gray-800 font-light max-w-xl leading-relaxed mb-8 md:mb-12">
+            <p class="text-base md:text-xl text-gray-800 font-light w-full md:max-w-xl leading-relaxed">
                 {{ with .Params.heroDescription }}{{ . }}{{ else }}I am Dewi Ria Utari. Writing is my way of speaking to
                 the world, without making a sound.{{ end }}
             </p>
 
+            <!-- Desktop Scroll Button -->
             <a href="#works"
-                class="flex items-center space-x-2 text-sm font-medium animate-bounce mt-12 cursor-pointer opacity-50 hover:opacity-100 transition-opacity text-brand-black">
+                class="hidden md:flex items-center space-x-2 text-sm font-medium animate-bounce mt-12 cursor-pointer opacity-50 hover:opacity-100 transition-opacity text-brand-black">
                 <span>SCROLL TO EXPLORE</span>
                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -32,13 +34,23 @@
             </a>
         </div>
     </div>
+
+    <!-- Mobile Scroll Button (Bottom Left) -->
+    <a href="#works"
+        class="md:hidden flex items-center space-x-2 text-sm font-medium animate-bounce mt-auto cursor-pointer opacity-70 text-brand-black z-20">
+        <span>SCROLL TO EXPLORE</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+        </svg>
+    </a>
 </section>
 
 <!-- Selected Books Section -->
 <section id="works" class="py-32 bg-white">
     <div class="max-w-screen-2xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
-            <h2 class="font-serif text-5xl md:text-6xl text-brand-black">Selected Books</h2>
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 reveal">
+            <h2 class="font-serif text-5xl md:text-6xl text-brand-black text-center md:text-left w-full md:w-auto">
+                Selected Books</h2>
             <a href="/books/"
                 class="hidden md:block text-brand-orange border-b border-brand-orange pb-1 hover:text-black hover:border-black transition-all">View
                 All Books</a>
@@ -58,8 +70,9 @@
 <!-- Short Stories Section -->
 <section id="stories" class="py-32 bg-brand-gray/30">
     <div class="max-w-screen-2xl mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-20 reveal">
-            <h2 class="font-serif text-5xl md:text-6xl text-brand-black">Short Stories</h2>
+        <div class="flex flex-col md:flex-row justify-between items-center md:items-end mb-20 reveal">
+            <h2 class="font-serif text-5xl md:text-6xl text-brand-black text-center md:text-left w-full md:w-auto">Short
+                Stories</h2>
             <a href="/stories/"
                 class="hidden md:block text-brand-orange border-b border-brand-orange pb-1 hover:text-black hover:border-black transition-all">View
                 All Stories</a>
