@@ -3,8 +3,8 @@ title: Home
 heroTagline: Writer & Storyteller
 heroTitle: Crafting <br><span class="italic text-brand-orange">Stories</span>
   that <br>Resonate.
-heroDescription: I am Dewi Ria Utari <em>(dru)</em>. Writing is my way of
-  speaking to the world, without making a sound.
+heroDescription: I am Dewi Ria Utari. Writing is my way of speaking to the
+  world, without making a sound.
 aboutTitle: Writing is <br><span class="text-brand-orange
   italic">Thinking</span> <br>on Paper.
 aboutParagraph1: In every word I weave, there is a piece of soul that wants to
