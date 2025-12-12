@@ -3,7 +3,7 @@ title: Nalar’s Mask
 bookSlug: kekasih-marionette
 bookTitle: Kekasih Marionette dan 12 Kisah Lainnya
 bookTitleEn: Marionette's Lover and 12 Other Stories
-cover: /images/book-cover_kekasih-marionette.jpg
+cover: https://idwriters.com/wp-content/uploads/2017/10/nalar1.jpg
 weight: 10
 ---
 Nalar has been running a fever for three days. Usually, a wet compress or some shallot slices on her forehead quickly dispels such fevers. Yesterday, her grandmother took her to see Mak Moyong, a healer of children, who said it was a bout of epilepsy. But Nalar’s fever persisted, even after her grandmother made her drink Mak Moyong’s tonic.
