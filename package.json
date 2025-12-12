@@ -1,0 +1,13 @@
+{
+    "name": "dru-hugo-site",
+    "version": "1.0.0",
+    "description": "Dewi Ria Utari Portfolio Website",
+    "scripts": {
+        "build:css": "npx tailwindcss -i ./assets/css/input.css -o ./static/css/styles.css --minify",
+        "watch:css": "npx tailwindcss -i ./assets/css/input.css -o ./static/css/styles.css --watch",
+        "build": "npm run build:css && hugo --minify"
+    },
+    "devDependencies": {
+        "tailwindcss": "^3.4.0"
+    }
+}

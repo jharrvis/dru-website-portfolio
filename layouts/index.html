@@ -1,13 +1,11 @@
 {{ define "main" }}
-{{ $heroImages := .Site.Params.heroImages }}
-{{ $randomIndex := mod now.UnixNano (len $heroImages) }}
-{{ $randomImage := index $heroImages $randomIndex }}
 <!-- Hero Section -->
 <section class="relative min-h-screen flex flex-col justify-center px-6 pt-28 md:pt-24 pb-12 overflow-hidden">
-    <!-- Background Image -->
+    <!-- Background Image (dynamically set by JS) -->
     <div class="absolute inset-0 z-0">
-        <img src="/images/ilustrasi/{{ $randomImage }}" alt="Background Illustration"
-            class="w-full h-full object-cover md:object-none md:object-right-bottom opacity-30 md:opacity-100">
+        <img id="hero-bg-image" src="" alt="Background Illustration"
+            class="w-full h-full object-cover md:object-none md:object-right-bottom opacity-30 md:opacity-100"
+            style="display: none;">
     </div>
 
     <div

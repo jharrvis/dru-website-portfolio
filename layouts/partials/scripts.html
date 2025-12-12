@@ -1,4 +1,21 @@
 <script>
+    // Random Hero Image - Execute immediately for no flash
+    (function () {
+        const heroImages = [
+            'img104.jpg', 'img108.jpg', 'img114.jpg', 'img120.jpg', 'img124.jpg',
+            'img128.jpg', 'img132.jpg', 'img138.jpg', 'img144.jpg', 'img148.jpg',
+            'img152.jpg', 'img162.jpg', 'img168.jpg', 'img18.jpg', 'img24.jpg',
+            'img252.jpg', 'img46.jpg', 'img50.jpg', 'img62.jpg', 'img66.jpg',
+            'img70.jpg', 'img74.jpg', 'img82.jpg', 'img90.jpg', 'img94.jpg'
+        ];
+        const randomImage = heroImages[Math.floor(Math.random() * heroImages.length)];
+        const heroBg = document.getElementById('hero-bg-image');
+        if (heroBg) {
+            heroBg.src = '/images/ilustrasi/' + randomImage;
+            heroBg.style.display = '';
+        }
+    })();
+
     // Mobile Menu Toggle - Offcanvas Panel
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');

@@ -1,18 +1,19 @@
 [build]
   publish = "public"
-  command = "hugo --minify"
+  command = "npm install && npm run build:css && hugo --minify"
 
 [build.environment]
   HUGO_VERSION = "0.139.0"
+  NODE_VERSION = "20"
 
 [context.production.environment]
   HUGO_ENV = "production"
 
 [context.deploy-preview]
-  command = "hugo --buildFuture -b $DEPLOY_PRIME_URL"
+  command = "npm install && npm run build:css && hugo --buildFuture -b $DEPLOY_PRIME_URL"
 
 [context.branch-deploy]
-  command = "hugo --buildFuture -b $DEPLOY_PRIME_URL"
+  command = "npm install && npm run build:css && hugo --buildFuture -b $DEPLOY_PRIME_URL"
 
 [[redirects]]
   from = "/admin"
