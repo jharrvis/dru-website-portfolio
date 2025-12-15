@@ -157,7 +157,4 @@ collections:
             widget: "string"
             default: "In the space between the lines find me."
             hint: "Use HTML for styling: <span class=\"italic text-brand-orange\">text</span> for italic orange text"
-          - {label: "Bio Paragraph 1", name: "bioParagraph1", widget: "text", hint: "Paragraf bio singkat pertama"}
-          - {label: "Bio Paragraph 2", name: "bioParagraph2", widget: "text", hint: "Paragraf bio singkat kedua"}
-          - {label: "Bio Paragraph 3", name: "bioParagraph3", widget: "text", hint: "Paragraf bio singkat ketiga"}
           - {label: "Content", name: "body", widget: "markdown", hint: "Konten lengkap halaman About"}
