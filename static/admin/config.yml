@@ -151,9 +151,13 @@ collections:
         file: "content/about.md"
         fields:
           - {label: "Title", name: "title", widget: "string"}
+          - {label: "Profile Image", name: "profileImage", widget: "image", hint: "Upload foto profil untuk halaman About"}
           - label: "Hero Title"
             name: "heroTitle"
             widget: "string"
             default: "In the space between the lines find me."
             hint: "Use HTML for styling: <span class=\"italic text-brand-orange\">text</span> for italic orange text"
-          - {label: "Content", name: "body", widget: "markdown", hint: "First paragraph will have a drop cap style automatically."}
+          - {label: "Bio Paragraph 1", name: "bioParagraph1", widget: "text", hint: "Paragraf bio singkat pertama"}
+          - {label: "Bio Paragraph 2", name: "bioParagraph2", widget: "text", hint: "Paragraf bio singkat kedua"}
+          - {label: "Bio Paragraph 3", name: "bioParagraph3", widget: "text", hint: "Paragraf bio singkat ketiga"}
+          - {label: "Content", name: "body", widget: "markdown", hint: "Konten lengkap halaman About"}
