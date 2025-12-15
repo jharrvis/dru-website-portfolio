@@ -1,5 +1,7 @@
-title: "Award & International Achievements"
+title: Award & International Achievements
 items:
-  - name: "Khatulistiwa Literary Award"
-    logo: "/images/logo/logo-khatulistiwa-literary-award.svg"
+  - name: Khatulistiwa Literary Award
+    logo: /images/logo/logo-khatulistiwa-literary-award.svg
     url: ""
+  - logo: /images/logo-asian-culture-council.svg
+    name: Asian Cultural Council
