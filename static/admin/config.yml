@@ -21,6 +21,34 @@ collections:
           - {label: "YouTube URL", name: "youtube", widget: "string", required: false, hint: "Full YouTube channel URL"}
           - {label: "TikTok URL", name: "tiktok", widget: "string", required: false, hint: "Full TikTok profile URL"}
 
+      - label: "Awards & Achievements"
+        name: "awards"
+        file: "data/awards.yaml"
+        fields:
+          - {label: "Section Title", name: "title", widget: "string", default: "Award & International Achievements"}
+          - label: "Award Items"
+            name: "items"
+            widget: "list"
+            allow_add: true
+            fields:
+              - {label: "Award Name", name: "name", widget: "string"}
+              - {label: "Logo Image", name: "logo", widget: "image"}
+              - {label: "Link URL", name: "url", widget: "string", required: false, hint: "Optional link to award page"}
+
+      - label: "Available At (Partners)"
+        name: "partners"
+        file: "data/partners.yaml"
+        fields:
+          - {label: "Section Title", name: "title", widget: "string", default: "Available at"}
+          - label: "Partner Items"
+            name: "items"
+            widget: "list"
+            allow_add: true
+            fields:
+              - {label: "Partner Name", name: "name", widget: "string"}
+              - {label: "Logo Image", name: "logo", widget: "image"}
+              - {label: "Link URL", name: "url", widget: "string", hint: "Link to partner website"}
+
   - name: "books"
     label: "Books"
     folder: "content/books"
