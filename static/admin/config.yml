@@ -6,6 +6,21 @@ media_folder: "static/images"
 public_folder: "/images"
 
 collections:
+  - name: "settings"
+    label: "Site Settings"
+    files:
+      - label: "Social Media Links"
+        name: "social"
+        file: "data/settings.yaml"
+        fields:
+          - {label: "Email", name: "email", widget: "string", hint: "Email address for contact"}
+          - {label: "Instagram URL", name: "instagram", widget: "string", required: false, hint: "Full Instagram profile URL"}
+          - {label: "LinkedIn URL", name: "linkedin", widget: "string", required: false, hint: "Full LinkedIn profile URL"}
+          - {label: "Twitter/X URL", name: "twitter", widget: "string", required: false, hint: "Full Twitter/X profile URL"}
+          - {label: "Facebook URL", name: "facebook", widget: "string", required: false, hint: "Full Facebook page URL"}
+          - {label: "YouTube URL", name: "youtube", widget: "string", required: false, hint: "Full YouTube channel URL"}
+          - {label: "TikTok URL", name: "tiktok", widget: "string", required: false, hint: "Full TikTok profile URL"}
+
   - name: "books"
     label: "Books"
     folder: "content/books"
