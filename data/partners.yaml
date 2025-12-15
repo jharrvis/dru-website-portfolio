@@ -1,20 +1,20 @@
-title: "Available at"
+title: Available at
 items:
-  - name: "Gramedia"
-    logo: "/images/logo/logo-gramedia.svg"
-    url: "https://www.gramedia.com"
-  - name: "Gramedia Digital"
-    logo: "/images/logo/logo-gramedia-digital.svg"
-    url: "https://ebooks.gramedia.com"
-  - name: "BukuKita.com"
-    logo: "/images/logo/logo-bukukitacom.svg"
-    url: "https://www.bukukita.com"
-  - name: "Grobmart"
-    logo: "/images/logo/logo-grobmart.svg"
-    url: "https://www.grobmart.com"
-  - name: "Toco"
-    logo: "/images/logo/logo-toco.svg"
-    url: "https://toco.co.id"
-  - name: "Goodreads"
-    logo: "/images/logo/logo-goodreads.svg"
-    url: "https://www.goodreads.com"
+  - name: Gramedia Digital
+    logo: /images/logo/logo-gramedia-digital.svg
+    url: https://ebooks.gramedia.com
+  - name: Gramedia
+    logo: /images/logo/logo-gramedia.svg
+    url: https://www.gramedia.com
+  - name: BukuKita.com
+    logo: /images/logo/logo-bukukitacom.svg
+    url: https://www.bukukita.com
+  - name: Grobmart
+    logo: /images/logo/logo-grobmart.svg
+    url: https://www.grobmart.com
+  - name: Toco
+    logo: /images/logo/logo-toco.svg
+    url: https://toco.co.id
+  - name: Goodreads
+    logo: /images/logo/logo-goodreads.svg
+    url: https://www.goodreads.com
